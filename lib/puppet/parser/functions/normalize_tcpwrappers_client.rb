@@ -26,7 +26,7 @@ module Puppet::Parser::Functions
       ip      = IPAddr.new(ip).mask(masklen).to_s
       netmask = IPAddr.new('255.255.255.255').mask(masklen).to_s
       "#{ip}/#{netmask}"
-    when %r{/^\.?[a-z\d_.]+$}, %r{^/[^ \n\t,:#]+$}, 'ALL', 'LOCAL', 'PARANOID'
+    when %r{^\.?[a-z\d_\-.]+$}, %r{^/[^ \n\t,:#]+$}, 'ALL', 'LOCAL', 'PARANOID'
       # Hostname, FQDN, suffix, filename, keyword, etc.
       client
     else

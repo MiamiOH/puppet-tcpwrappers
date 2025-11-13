@@ -80,19 +80,19 @@
 #
 #
 class tcpwrappers (
-  String                $my_class       = params_lookup( 'my_class' ),
-  String                $allow_file     = params_lookup( 'allow_file' ),
-  String                $allow_source   = params_lookup( 'allow_source' ),
-  String                $deny_source    = params_lookup( 'deny_source' ),
-  String                $deny_file      = params_lookup( 'deny_file' ),
-  String                $allow_template = params_lookup( 'allow_template' ),
-  String                $deny_template  = params_lookup( 'deny_template' ),
-  Variant[String, Hash] $options        = params_lookup( 'options' ),
-  String                $version        = params_lookup( 'version' ),
-  Boolean               $audit_only     = params_lookup( 'audit_only' , 'global' ),
-  Boolean               $noops          = params_lookup( 'noops' ),
-  String                $package        = params_lookup( 'package' ),
-  String                $config_dir     = params_lookup( 'config_dir' )
+  String                $my_class       = $tcpwrappers::params::my_class,
+  String                $allow_file     = $tcpwrappers::params::allow_file,
+  String                $allow_source   = $tcpwrappers::params::allow_source,
+  String                $deny_source    = $tcpwrappers::params::deny_source,
+  String                $deny_file      = $tcpwrappers::params::deny_file,
+  String                $allow_template = $tcpwrappers::params::allow_template,
+  String                $deny_template  = $tcpwrappers::params::deny_template,
+  Variant[String, Hash] $options        = $tcpwrappers::params::options,
+  String                $version        = $tcpwrappers::params::version,
+  Boolean               $audit_only     = $tcpwrappers::params::audit_only,
+  Boolean               $noops          = $tcpwrappers::params::noops,
+  String                $package        = $tcpwrappers::params::package,
+  String                $config_dir     = $tcpwrappers::params::config_dir
 ) inherits tcpwrappers::params {
 
   $config_file_mode  = $tcpwrappers::params::config_file_mode
